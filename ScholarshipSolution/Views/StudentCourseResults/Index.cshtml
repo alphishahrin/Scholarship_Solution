@@ -1,0 +1,65 @@
+﻿@*@model IEnumerable<ScholarshipSolution.Models.StudentCourseResult>*@
+@model List< ScholarshipSolution.Models.StudentCourseInfo>
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="main-container">
+    <div class="pd-ltr-20 xs-pd-20-10">
+        <div class="min-height-200px">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="title">
+                            <h4>University Database</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-right">
+                        <div class="dropdown">
+                            <a class="btn btn-primary dropdown-toggle" href="~/StudentCourseResults/Create/" role="button">
+                                Add New
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Students Grade Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <h4 class="text-blue h4">Universities</h4>
+                </div>
+                <div>
+                    <table class="table">
+                        <tr>
+                            <th>Grade</th>
+                            <th>Course Name</th>
+                            <th>Student Name</th>
+                            @*<th>@Html.DisplayNameFor(model => model.CourseName)</th>*@
+                            @*<th>@Html.DisplayNameFor(model => model.FirstName)</th>*@
+                            <th>Action</th>
+                        </tr>
+
+                        @foreach (var item in ViewData.Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.Grade)</td>
+                                <td>@Html.DisplayFor(modelItem => item.CourseName)</td>
+                                <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+                                @*<td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.StudentCourseResultID }) |
+                                    @Html.ActionLink("Details", "Details", new { id = item.StudentCourseResultID }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.StudentCourseResultID })
+                                </td>*@
+                            </tr>
+                        }
+
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

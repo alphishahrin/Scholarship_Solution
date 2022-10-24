@@ -1,0 +1,357 @@
+﻿@model ScholarshipSolution.Models.Student
+
+@{
+    ViewBag.Title = "SignUp";
+    //Layout = "~/Views/Students/SignUp.cshtml";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Basic Page Info -->
+    <meta charset="utf-8">
+    <title>Scholarship Solution</title>
+
+    <!-- Site favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="~/Content/vendors_admin/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/Content/vendors_admin/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/vendors_admin/images/favicon-16x16.png">
+
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="~/Content/vendors_admin/styles/core.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/vendors_admin/styles/icon-font.min.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/plugins_admin/jquery-steps/jquery.steps.css">
+    <link rel="stylesheet" type="text/css" href="~/Content/vendors_admin/styles/style.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119386393-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-119386393-1');</script>
+</head>
+
+<body class="login-page">
+    <div class="login-header box-shadow">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+            <div class="brand-logo">
+                <a href="login.html">
+                    <img src="~/Content/vendors_admin/images/deskapp-logo - Copy.png" alt="">
+                </a>
+            </div>
+            <div class="login-menu">
+                <ul>
+                    <li><a href="~/Students/Login">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="register-page-wrap d-flex align-items-center flex-wrap justify-content-center">
+        <div class="container">
+            <div class="row align-items-center" style="padding:2px">
+                @using (Html.BeginForm("SignUp", "Students", FormMethod.Post, new { enctype = "multipart/form-data", @style="width:1500px;" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="col-md-5 col-lg-5" >
+                        <div class="bg-white box-shadow border-radius-5" style="width:650px; padding:2px;">
+                            <!-- Name, Email, Password -->
+                            <h5>Basic Account Credentials</h5>
+                            <section>
+                                <div class="form-wrap max-width-600 mx-auto">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">@Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })</label>
+                                        <div class="col-sm-8">
+                                            @Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">@Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })</label>
+                                        <div class="col-sm-8">
+                                            @Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">@Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })</label>
+                                        <div class="col-sm-8">
+                                            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">@Html.LabelFor(model => model.Password, htmlAttributes: new { @class = "control-label col-md-2" })</label>
+                                        <div class="col-sm-8">
+                                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- Department, Session, Year, Semester -->
+                            <h5>Educational Information</h5>
+                            <section>
+                                <div class="form-wrap max-width-600 mx-auto">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">@Html.LabelFor(model => model.Department, htmlAttributes: new { @class = "control-label col-md-2" })</label>
+                                        <div class="col-sm-8">
+                                            @Html.EditorFor(model => model.Department, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Department, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">@Html.LabelFor(model => model.Session, htmlAttributes: new { @class = "control-label col-md-2" })</label>
+                                        <div class="col-sm-8">
+                                            @Html.EditorFor(model => model.Session, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Session, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">@Html.LabelFor(model => model.Year, htmlAttributes: new { @class = "control-label col-md-2" })</label>
+                                        <div class="col-sm-8">
+                                            @Html.EditorFor(model => model.Year, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Year, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">@Html.LabelFor(model => model.Semester, htmlAttributes: new { @class = "control-label col-md-2" })</label>
+                                        <div class="col-sm-8">
+                                            @Html.EditorFor(model => model.Semester, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Semester, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                    <div class="col-md-5 col-lg-6" >
+                        <div class="bg-white box-shadow border-radius-5" style="width:650px; padding:2px;">                           
+                            <!-- Step 2 -->
+                            <h5>Curricular Information</h5>
+                            <section>
+                                <div class="form-wrap max-width-600 mx-auto">
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">@Html.LabelFor(model => model.AverageGrade, htmlAttributes: new { @class = "control-label col-md-2" })</label>
+                                        <div class="col-sm-8">
+                                            @Html.EditorFor(model => model.AverageGrade, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.AverageGrade, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">@Html.LabelFor(model => model.CompletedCredit, htmlAttributes: new { @class = "control-label col-md-2" })</label>
+                                        <div class="col-sm-8">
+                                            @Html.EditorFor(model => model.CompletedCredit, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.CompletedCredit, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>                          
+                                </div>
+                            </section>
+                            <!-- Step 3 -->
+                            <h5>Other Indormation</h5>
+                            <section>
+                                <div class="form-wrap max-width-600 mx-auto">
+                                    <div class="form-group row align-items-center">
+                                        <label class="col-sm-4 col-form-label">@Html.LabelFor(model => model.ExtracurricularActivities, htmlAttributes: new { @class = "control-label col-md-2" })</label>
+                                        <div class="col-sm-8">
+                                            @Html.EditorFor(model => model.ExtracurricularActivities, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.ExtracurricularActivities, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-sm-4 col-form-label">@Html.LabelFor(model => model.Blog, htmlAttributes: new { @class = "control-label col-md-2" })</label>
+                                        <div class="col-sm-3">
+                                            @Html.EditorFor(model => model.Blog, new { htmlAttributes = new { @class = "form-control" } })
+                                            @Html.ValidationMessageFor(model => model.Blog, "", new { @class = "text-danger" })
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- Step 4 -->
+                            <h5>Picture</h5>
+                            <section>
+                                <div class="form-wrap max-width-600 mx-auto">
+                                    <div class="form-group row align-items-center">
+                                        <input type="file" name="ImageFile">
+                                    </div>
+                                </div>
+                                <div class="form-wrap max-width-600 mx-auto">
+                                    <input type="submit" value="Create" class="btn btn-default" />
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <!-- js -->
+    <script src="~/Content/vendors_admin/scripts/core.js"></script>
+    <script src="~/Content/vendors_admin/scripts/script.min.js"></script>
+    <script src="~/Content/vendors_admin/scripts/process.js"></script>
+    <script src="~/Content/vendors_admin/scripts/layout-settings.js"></script>
+    <script src="~/Content/plugins_admin/jquery-steps/jquery.steps.js"></script>
+    <script src="~/Content/vendors_admin/scripts/steps-setting.js"></script>
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title></title>-->
+    <!-- Mobile Specific Metas-->
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    @Styles.Render("~/Content/css/montserrat-font.css")
+    @Styles.Render("~/Content/css/material-design-iconic-font.min.css")
+
+    @Styles.Render("~/Content/css/style2.css")
+</head>
+
+<body class="form-v10">
+    <div class="page-content">
+        <div class="form-v10-content">
+            <form class="form-detail" action="#" method="post" id="myform">
+                @Html.AntiForgeryToken()
+                <div class="form-left">
+                    <h2>General Infomation</h2>
+
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+
+                    <div class="form-row">
+                        
+                        <div class="col-md-10">
+                            
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        
+                        <div class="col-md-10">
+                            
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        
+                        
+                    </div>
+                    <div class="form-row">
+                        
+                        <div class="col-md-10">
+                            
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        
+                        <div class="col-md-10">
+                            
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        
+                        <div class="col-md-10">
+                            
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="form-right">
+                    <h2>Education Details</h2>
+
+                    <div class="form-row">
+                        
+                        <div class="col-md-10">
+                            
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        
+                        <div class="col-md-10">
+                            
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        
+                        <div class="col-md-10">
+                            
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        
+                        <div class="col-md-10">
+                            
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        
+                        <div class="col-md-10">
+                            
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        
+                        <div class="col-md-10">
+                            
+                        </div>
+                    </div>
+
+
+                    <div class="form-row-last">
+                        <input type="submit" value="Register" class="btn btn-default" />
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+</body>
+</html>-->-->
+
+

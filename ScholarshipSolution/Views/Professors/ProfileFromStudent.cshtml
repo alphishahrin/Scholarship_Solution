@@ -1,0 +1,235 @@
+﻿@model ScholarshipSolution.Models.Professor
+@{
+    ViewBag.Title = "ProfileFromStudent";
+    Layout = null; 
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Scholarship Solution</title>
+    <!-- Site favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="~/Content/vendors_admin/images/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/Content/vendors_admin/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/vendors_admin/images/favicon-16x16.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+    @Styles.Render("~/Content/vendor/bootstrap/css/bootstrap.min.css")
+    @Styles.Render("~/Content/vendor/bootstrap-icons/bootstrap-icons.css")
+    @Styles.Render("~/Content/cssassets/vendor/aos/aos.css")
+    @Styles.Render("~/Content/vendor/remixicon/remixicon.css")
+    @Styles.Render("~/Content/vendor/swiper/swiper-bundle.min.css")
+    @Styles.Render("~/Content/vendor/glightbox/css/glightbox.min.css")
+    @Styles.Render("~/Content/css/style.css")
+    @Styles.Render("~/Content/css/profprofile.css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+            <a href="#hero" class="logo d-flex align-items-center">
+                <img src="~/Content/img/logo.png" alt="">
+                <span style="color:#ff758f;">Scholarship Solution</span>
+            </a>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto" href="~/Universities/SearchUni/">University</a></li>
+                    <li><a class="nav-link scrollto" href="~/Students/Professor/">Professor</a></li>
+                    <li><a class="nav-link scrollto" href="~/Students/StudentScholarship/">Scholarship</a></li>
+                    <li><a class="nav-link scrollto " style="margin-left:35px; " href="~/Students/DashBoard/">My Profile</a></li>
+                    <li><a class="getstarted scrollto" href="~/Home/Index/">Logout</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header>
+    <!-- Header -->
+    <!-- Page content -->
+    <br><br><br><br><br><br><br>
+    <div class="container-fluid mt--7">
+        <div class="row">
+            <div class="col-xl-4 order-xl-2 mb-5 mb-xl-0">
+                <div class="card card-profile shadow">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-3 order-lg-2">
+                            <div class="card-profile-image">
+                                <a href="#">
+                                    <img src="@Url.Content(Model.Picture)" class="rounded-circle">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-body pt-0 pt-md-4">
+                        <div class="row">
+                            <div class="col">
+                                <div class="card-profile-stats d-flex justify-content-center mt-md-5">
+                                    <div>
+                                        <span class="heading">8</span>
+                                        <span class="description">Research Paper</span>
+                                    </div>
+                                    <div>
+                                        <span class="heading">2</span>
+                                        <span class="description">Scholarship</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <h3>
+                                @Html.DisplayFor(model => model.Name)
+                            </h3>
+                            <div class="h5 font-weight-300">
+                                <i class="ni location_pin mr-2"></i>@Html.DisplayFor(model => model.Email)
+                            </div>
+                            <div class="h5 mt-4">
+                                <i class="ni business_briefcase-24 mr-2"></i>@Html.DisplayFor(model => model.Department)
+                            </div>
+                            <div>
+                                <i class="ni education_hat mr-2"></i>@Html.DisplayFor(model => model.University.UniName)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-header text-center border-0 pt-8 pt-md-4 pb-0 pb-md-4">
+                        <div class="d-flex ">
+                            @Html.ActionLink("Research Paper", "Index", "ProfessorResearchPapers", new { id = Model.ProfID }, new { @class = "btn btn-sm btn-info mr-4" })
+                            @Html.ActionLink("Scholarship", "Indexone", "Scholarships", new { id = Model.ProfID }, new { @class = "btn btn-sm btn-default float-right" })
+                                                      
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8 order-xl-1">
+                <div class="card bg-secondary shadow">
+                    <div class="card-header bg-white border-0">
+                        <div class="row align-items-center">
+                            <div class="col-8">
+                                <h3 class="mb-0">My account</h3>
+                            </div>
+                            @*<div class="col-4 text-right">
+                                    <a href="#!" class="btn btn-sm btn-primary">Settings</a>
+                                </div>*@
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <form>
+                            <h6 class="heading-small text-muted mb-4">User information</h6>
+                            <div class="pl-lg-4">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group focused">
+                                            <label>Name: </label>
+                                            @Html.DisplayFor(model => model.Name)
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="form-group">
+                                            <label>Email: </label>
+                                            @Html.DisplayFor(model => model.Email)
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="form-group focused">
+                                            <label>Department: </label>
+                                            @Html.DisplayFor(model => model.Department)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="my-4">
+                            <!-- Education -->
+                            <h6 class="heading-small text-muted mb-4">Educational information</h6>
+                            <div class="pl-lg-4">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group focused">
+                                            <label>University: </label>
+                                            @Html.DisplayFor(model => model.University.UniName)
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group focused">
+                                            <label>Education: </label>
+                                            @Html.DisplayFor(model => model.EducationalBackground)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="my-4">
+                            <!-- Scholarship -->
+                            <h6 class="heading-small text-muted mb-4">Educational information</h6>
+                            <div class="pl-lg-4">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group focused">
+                                            <label>Applicant Limit: </label>
+                                            @Html.DisplayFor(model => model.NoOfStudents)
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group focused">
+                                            <label>Funding: </label>
+                                            @Html.DisplayFor(model => model.Funding)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="my-4">
+                            <!-- Interest Expertise -->
+                            <h6 class="heading-small text-muted mb-4">Educational information</h6>
+                            <div class="pl-lg-4">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group focused">
+                                            <label>Interest in: </label>
+                                            @Html.DisplayFor(model => model.Interest.TopicName)
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group focused">
+                                            <label>Expert in: </label>
+                                            @Html.DisplayFor(model => model.Expertise.TopicName)
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr class="my-4">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Vendor JS Files -->
+    @Scripts.Render("~/assets/vendor/bootstrap/js/bootstrap.bundle.js")
+    @Scripts.Render("~/assets/vendor/aos/aos.js")
+    @Scripts.Render("~/assets/vendor/php-email-form/validate.js")
+    @Scripts.Render("~/assets/vendor/swiper/swiper-bundle.min.js")
+    @Scripts.Render("~/assets/vendor/purecounter/purecounter.js")
+    @Scripts.Render("~/assets/vendor/isotope-layout/isotope.pkgd.min.js")
+    @Scripts.Render("~/assets/vendor/glightbox/js/glightbox.min.js")
+
+
+    <!-- Template Main JS File -->
+    @Scripts.Render("~/assets/js/main.js")
+    @*@RenderSection("scripts", required: false)*@
+</body>
+</html>
+
+

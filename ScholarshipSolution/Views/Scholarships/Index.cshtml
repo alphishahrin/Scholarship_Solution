@@ -1,0 +1,64 @@
+﻿@model List<ScholarshipSolution.Models.ProfessorScholarship>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutProf.cshtml";
+}
+
+    <!-- Header -->
+    <!-- Page content -->
+    <br><br><br><br><br><br><br>
+    <div class="container-fluid mt--7">
+        <div class="row">
+
+            <div class="col-xl-12 order-xl-1">
+                <div class="card bg-secondary shadow">
+                    <div class="card-header bg-white border-0">
+                        <div class="row align-items-center">
+                            <div class="col-8">
+                                <h3 class="mb-0">Research Papers</h3>
+                                @Html.ActionLink("Back", "Profile", "Professors", null, new { @class = "btn btn-sm btn-info mr-4" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <tr>
+                                <th>Degree Name</th>
+                                <th>Subject</th>
+                                <th>Percentage Of Scholarship</th>
+                                <th>Session</th>
+                                <th>Seats</th>
+                                <th>Minimum GPA</th>
+                                <th>OtherRequirements</th>
+                                <th>LastDate</th>
+                                <th>Professor</th>
+                                <th>University</th>
+                                <th>Enrollment</th>
+                            </tr>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td> @Html.DisplayFor(modelItem => item.DegreeName)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Subject)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.PercentageOfScholarship)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Session)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Seats)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.MinimumGPA)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.OtherRequirements)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.LastDate)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.UniName)</td>
+                                    <td>@Html.ActionLink("Show", "EnrolledStudent", "StudentScholarships", new { id = item.ScholarshipID }, new { @class = "btn btn-sm btn-info mr-4" })</td>
+                                </tr>
+                            }
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+

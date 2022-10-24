@@ -1,0 +1,42 @@
+﻿@model ScholarshipSolution.Models.StudentMessage
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>StudentMessage</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TextMessage)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TextMessage)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Professor.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Professor.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Student.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Student.FirstName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.MessageId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,57 @@
+﻿@model ScholarshipSolution.Models.StudentScholarship
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutStudent.cshtml";
+}
+<section id="services" class="services">
+
+    <div class="container" data-aos="fade-up">
+        <header class="section-header">
+            <h2>Delete</h2>
+            <p>Are you sure you want to delete this? </p>
+        </header>
+        
+        <div>
+            <h4>StudentScholarship</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Status)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Status)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Scholarship.DegreeName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Scholarship.DegreeName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Student.FirstName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Student.FirstName)
+                </dd>
+
+            </dl>
+
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                @*<div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-default" /> |
+                    @Html.ActionLink("Back to List", "Index")
+                </div>*@
+            }
+        </div>
+        
+        </div>
+    </section>

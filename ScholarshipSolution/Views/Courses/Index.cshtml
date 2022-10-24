@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ScholarshipSolution.Models.Course>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div class="main-container">
+    <div class="pd-ltr-20 xs-pd-20-10">
+        <div class="min-height-200px">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="title">
+                            <h4>Course Database</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-right">
+                        <div class="dropdown">
+                            <a class="btn btn-primary dropdown-toggle" href="~/Courses/Create/" role="button">
+                                Add New
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Course Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <h4 class="text-blue h4">Universities</h4>
+                </div>
+                <div>
+                    <table class="table">
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.CourseName)</th>
+                            <th>@Html.DisplayNameFor(model => model.Year)</th>
+                            <th>@Html.DisplayNameFor(model => model.Semester)</th>
+                            <th>Action</th>
+                        </tr>
+
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.CourseName)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Year)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Semester)</td>
+                                <td>
+                                    @Html.ActionLink("Edit", "Edit", new { id = item.CourseID }) |
+                                    @Html.ActionLink("Delete", "Delete", new { id = item.CourseID })
+                                </td>
+                            </tr>
+                        }
+
+
+                    </table>
+                </div>
+            </div>
+            <!-- Course Datatable End -->
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,27 @@
+﻿@model ScholarshipSolution.Models.StudentScholarship
+
+@{
+    ViewBag.Title = "Create";
+    Layout = null;
+}
+
+<h2>Confirm Enrollemt?</h2>
+
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Yes" class="btn btn-default" />              
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back", "StudentScholarship", "Students")
+</div>

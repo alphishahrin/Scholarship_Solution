@@ -1,0 +1,123 @@
+﻿@*@model IEnumerable<ScholarshipSolution.Models.Scholarship>*@
+@model List<ScholarshipSolution.Models.ProfessorScholarship>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Scholarship Solution</title>
+    <!-- Site favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="~/Content/vendors_admin/images/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/Content/vendors_admin/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/vendors_admin/images/favicon-16x16.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+
+    @Styles.Render("~/Content/vendor/bootstrap/css/bootstrap.min.css")
+    @Styles.Render("~/Content/vendor/bootstrap-icons/bootstrap-icons.css")
+    @Styles.Render("~/Content/cssassets/vendor/aos/aos.css")
+    @Styles.Render("~/Content/vendor/remixicon/remixicon.css")
+    @Styles.Render("~/Content/vendor/swiper/swiper-bundle.min.css")
+    @Styles.Render("~/Content/vendor/glightbox/css/glightbox.min.css")
+    @Styles.Render("~/Content/css/style.css")
+    @Styles.Render("~/Content/css/profprofile.css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+            <a href="#hero" class="logo d-flex align-items-center">
+                <img src="~/Content/img/logo.png" alt="">
+                <span style="color:#ff758f;">Scholarship Solution</span>
+            </a>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto" href="~/Universities/SearchUni/">University</a></li>
+                    <li><a class="nav-link scrollto" href="~/Students/Professor/">Professor</a></li>
+                    <li><a class="nav-link scrollto" href="~/Students/StudentScholarship/">Scholarship</a></li>
+                    <li><a class="nav-link scrollto " style="margin-left:35px; " href="~/Students/DashBoard/">My Profile</a></li>
+                    <li><a class="getstarted scrollto" href="~/Home/Index/">Logout</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header>
+    <!-- Header -->
+    <!-- Page content -->
+    <br><br><br><br><br><br><br>
+    <div class="container-fluid mt--7">
+        <div class="row">
+
+            <div class="col-xl-12 order-xl-1">
+                <div class="card bg-secondary shadow">
+                    <div class="card-header bg-white border-0">
+                        <div class="row align-items-center">
+                            <div class="col-8">
+                                <h3 class="mb-0">Research Papers</h3>
+                                @Html.ActionLink("Back", "Profile", "Professors", null, new { @class = "btn btn-sm btn-info mr-4" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <table class="table">
+                            <tr>
+                                <th>Degree Name</th>
+                                <th>Subject</th>
+                                <th>Percentage Of Scholarship</th>
+                                <th>Session</th>
+                                <th>Seats</th>
+                                <th>Minimum GPA</th>
+                                <th>OtherRequirements</th>
+                                <th>LastDate</th>
+                                <th>Professor</th>
+                                <th>University</th>
+                               
+                            </tr>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td> @Html.DisplayFor(modelItem => item.DegreeName)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Subject)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.PercentageOfScholarship)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Session)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Seats)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.MinimumGPA)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.OtherRequirements)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.LastDate)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                                    <td>@Html.DisplayFor(modelItem => item.UniName)</td>
+                                    
+                                </tr>
+                            }
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Vendor JS Files -->
+    @Scripts.Render("~/assets/vendor/bootstrap/js/bootstrap.bundle.js")
+    @Scripts.Render("~/assets/vendor/aos/aos.js")
+    @Scripts.Render("~/assets/vendor/php-email-form/validate.js")
+    @Scripts.Render("~/assets/vendor/swiper/swiper-bundle.min.js")
+    @Scripts.Render("~/assets/vendor/purecounter/purecounter.js")
+    @Scripts.Render("~/assets/vendor/isotope-layout/isotope.pkgd.min.js")
+    @Scripts.Render("~/assets/vendor/glightbox/js/glightbox.min.js")
+
+
+    <!-- Template Main JS File -->
+    @Scripts.Render("~/assets/js/main.js")
+    @*@RenderSection("scripts", required: false)*@
+</body>
+</html>
+

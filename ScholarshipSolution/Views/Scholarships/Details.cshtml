@@ -1,0 +1,98 @@
+﻿@model ScholarshipSolution.Models.Scholarship
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Scholarship</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DegreeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DegreeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PercentageOfScholarship)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PercentageOfScholarship)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Session)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Session)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Seats)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Seats)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinimumGPA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinimumGPA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtherRequirements)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtherRequirements)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Professor.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Professor.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.University.UniName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.University.UniName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ScholarshipID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

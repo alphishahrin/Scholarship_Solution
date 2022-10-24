@@ -1,0 +1,53 @@
+﻿@model ScholarshipSolution.Models.TemoStudent
+
+@{
+    ViewBag.Title = "Login";
+    var msg = ViewBag.LoginFailed;
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Register as Student</title>
+<!-- Mobile Specific Metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<!-- Font-->
+@Styles.Render("~/Content/css/montserrat-font.css")
+@Styles.Render("~/Content/css/material-design-iconic-font.min.css")
+<!-- Main Style Css -->
+@Styles.Render("~/Content/css/style2.css")
+</head>
+
+<body class="form-v10">
+    <div class="page-content">
+        <div class="form-v10-content">
+            <form class="form-detail" action="#" method="post" id="myform">
+                @Html.AntiForgeryToken()
+                <div class="form-right">
+                    <h2>Login</h2>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-row">
+                        @Html.LabelFor(model => model.Email, "Email", htmlAttributes: new { @class = "control-label col-md-2" })
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-row">
+                        @Html.LabelFor(model => model.Password, "Password", htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-row-last">
+                        <input type="submit" value="Login" class="btn btn-default" />
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>-

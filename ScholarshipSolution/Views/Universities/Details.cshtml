@@ -1,0 +1,71 @@
+﻿@model ScholarshipSolution.Models.University
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="main-container">
+    <div class="pd-ltr-20 xs-pd-20-10">
+        <div class="min-height-200px">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="title">
+                            <h4>University Details</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-box mb-30">
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.UniName)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.UniName)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.UniRating)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.UniRating)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.UniPicture)
+                    </dt>
+
+                    <dd>
+                        <img src="@Url.Content(Model.UniPicture)" width="250" height="250" />
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.City)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.City)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Country)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Country)
+                    </dd>
+
+                </dl>
+            </div>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.UniID })
+            </p>
+        </div>
+    </div>
+</div>
+
+            

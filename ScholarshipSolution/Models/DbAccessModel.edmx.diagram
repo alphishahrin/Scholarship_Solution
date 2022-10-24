@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f78d2615bc9d475b9272e21d9bf9a58d" Name="Diagram1">
+        <EntityTypeShape EntityType="final_32_dbModel.Course" Width="1.5" PointX="3" PointY="16.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="final_32_dbModel.Expertise" Width="1.5" PointX="0.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="final_32_dbModel.Interest" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="final_32_dbModel.Professor" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="final_32_dbModel.ProfessorResearchPaper" Width="1.5" PointX="5.25" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="final_32_dbModel.Scholarship" Width="1.5" PointX="8.25" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="final_32_dbModel.Student" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="final_32_dbModel.StudentCourseResult" Width="1.5" PointX="5.25" PointY="2.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="final_32_dbModel.StudentExpertise" Width="1.5" PointX="6" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="final_32_dbModel.StudentInterest" Width="1.5" PointX="8.25" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="final_32_dbModel.StudentMessage" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="final_32_dbModel.StudentResearchPaper" Width="1.5" PointX="5.25" PointY="16" IsExpanded="true" />
+        <EntityTypeShape EntityType="final_32_dbModel.University" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <AssociationConnector Association="final_32_dbModel.FK__StudentCo__Cours__24927208" ManuallyRouted="false" />
+        <AssociationConnector Association="final_32_dbModel.FK__Professor__Exper__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="final_32_dbModel.FK__StudentEx__Exper__1DE57479" ManuallyRouted="false" />
+        <AssociationConnector Association="final_32_dbModel.FK__Professor__Inter__2B3F6F97" ManuallyRouted="false" />
+        <AssociationConnector Association="final_32_dbModel.FK__StudentIn__Inter__1A14E395" ManuallyRouted="false" />
+        <AssociationConnector Association="final_32_dbModel.FK__Professor__ProfI__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="final_32_dbModel.FK__Professor__UniID__2A4B4B5E" ManuallyRouted="false" />
+        <AssociationConnector Association="final_32_dbModel.FK__Scholarsh__ProfI__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="final_32_dbModel.FK__StudentMe__ProfI__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="final_32_dbModel.FK__Scholarsh__UniID__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="final_32_dbModel.FK__StudentCo__Stude__25869641" ManuallyRouted="false" />
+        <AssociationConnector Association="final_32_dbModel.FK__StudentEx__Stude__1CF15040" ManuallyRouted="false" />
+        <AssociationConnector Association="final_32_dbModel.FK__StudentIn__Stude__1920BF5C" ManuallyRouted="false" />
+        <AssociationConnector Association="final_32_dbModel.FK__StudentMe__Stude__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="final_32_dbModel.FK__StudentRe__Stude__36B12243" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="final_32_dbModel.StudentScholarship" Width="1.5" PointX="10.5" PointY="4.875" />
+        <AssociationConnector Association="final_32_dbModel.FK__StudentSc__Schol__49C3F6B7" />
+        <AssociationConnector Association="final_32_dbModel.FK__StudentSc__Stude__4AB81AF0" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

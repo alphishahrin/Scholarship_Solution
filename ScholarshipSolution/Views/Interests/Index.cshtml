@@ -1,0 +1,105 @@
+﻿@model IEnumerable<ScholarshipSolution.Models.Interest>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="main-container">
+    <div class="pd-ltr-20 xs-pd-20-10">
+        <div class="min-height-200px">
+            <div class="page-header">
+                <div class="row">
+                    <div class="col-md-6 col-sm-12">
+                        <div class="title">
+                            <h4>Interest Database</h4>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-right">
+                        <div class="dropdown">
+                            <a class="btn btn-primary dropdown-toggle" href="~/Interests/Create/" role="button">
+                                Add New
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- University Datatable start -->
+            <div class="card-box mb-30">
+                <div class="pd-20">
+                    <h4 class="text-blue h4">Interest</h4>
+                </div>
+                <div class="pb-20">
+                    <table class="data-table table stripe hover nowrap">
+                        <thead>
+                            <tr>
+                                <th>@Html.DisplayNameFor(model => model.TopicName)</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>@Html.DisplayFor(modelItem => item.TopicName)</td>
+                                    <td>
+                                        <div class="dropdown">
+                                            <a class="btn btn-link font-24 p-0 line-height-1 no-arrow dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+                                                <i class="dw dw-more"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right dropdown-menu-icon-list">
+                                                <a class="dropdown-item" href="@Html.ActionLink("Details", "Details", new { id=item.InterestID }) "><i class="dw dw-eye"></i> View</a>
+                                                <a class="dropdown-item" href="@Html.ActionLink("Edit", "Edit", new { id=item.InterestID }) "><i class="dw dw-edit2"></i> Edit</a>
+                                                <a class="dropdown-item" href="@Html.ActionLink("Delete", "Delete", new { id=item.InterestID })"><i class="dw dw-delete-3"></i> Delete</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <!-- University Datatable End -->
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.TopicName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TopicName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.InterestID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.InterestID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.InterestID })
+        </td>
+    </tr>
+}
+
+</table>*@

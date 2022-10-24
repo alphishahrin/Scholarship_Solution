@@ -1,0 +1,82 @@
+﻿@model IEnumerable<ScholarshipSolution.Models.StudentResearchPaper>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutStudent.cshtml";
+}
+
+
+    <section id="content" class="container">
+
+        <p>
+            @Html.ActionLink("Create New", "Create")
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PageNO)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Volume)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PublicationDate)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Publisher)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Citation)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Link)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Student.FirstName)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PageNO)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Volume)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PublicationDate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Publisher)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Citation)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Link)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Student.FirstName)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.DOI }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.DOI }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.DOI })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </section>
+
+
+

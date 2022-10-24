@@ -1,0 +1,56 @@
+﻿@model IEnumerable< ScholarshipSolution.Models.Student> 
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutProf.cshtml";
+}
+
+
+
+    <!-- Header -->
+    <main>
+        <section id="portfolio" class="portfolio">
+            <div class="container" data-aos="fade-up">
+                <header class="section-header">
+                    <h2>Student List</h2>
+                    <p>All the registered students</p>
+                </header>
+
+                <div>
+                    @using (Html.BeginForm("Index", "Students", FormMethod.Get))
+                    {
+                        //@Html.TextBox("searching")<input type="submit" value="Search" />
+                        @Html.TextBox("searching", null, new { id = "choices-text-preset-values", @class = "form-control", @type = "text", @placeholder = "Type to search..." })<input type="submit" value="Search" />
+                    }
+                </div>
+                <br><br><br>
+                <div class="">
+                    <table class="table">
+                        <tr>
+                            <th>@Html.DisplayNameFor(model => model.FirstName)</th>
+                            <th>@Html.DisplayNameFor(model => model.Department)</th>
+                            <th>@Html.ActionLink("Avg Grade", "Index", new { sortBy = ViewBag.SortGpa })</th>
+                        
+                            <th></th>
+                        </tr>
+                        @if (Model.Count() == 0)
+                        {
+                            <p style="color:red"> No Match Found!</p>
+                        }
+                        else
+                        {
+                            foreach (var item in Model)
+                            {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.FirstName)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Department)</td>
+                                <td>@Html.DisplayFor(modelItem => item.AverageGrade)</td>
+                                <td>@Html.ActionLink("Profile", "Details", new { id = item.StudentID })</td>
+                            </tr>
+                            }
+                        }
+                    </table>
+                </div>
+            </div>
+        </section>
+    </main>

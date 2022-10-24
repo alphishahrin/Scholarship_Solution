@@ -1,0 +1,82 @@
+﻿@model ScholarshipSolution.Models.ProfessorResearchPaper
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>ProfessorResearchPaper</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PageNO)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PageNO)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Volume)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Volume)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PublicationDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PublicationDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Publisher)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Publisher)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Citation)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Citation)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Link)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Link)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Professor.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Professor.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.DOI }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

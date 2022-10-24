@@ -1,0 +1,144 @@
+﻿@using ScholarshipSolution.Models;
+@model dynamic
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutProf.cshtml";
+}
+
+
+
+    <!-- Header -->
+    <!-- Page content -->
+    <br><br>
+    <section id="content" class="container">
+        <!-- Begin .page-heading -->
+        <div class="page-heading">
+            <div class="media clearfix">
+                <div class="media-left pr30">
+                    <a href="#">
+                        <img class="media-object mw150" src="@Url.Content(Model.Student.StudentPicture)" width="250" height="250">
+                    </a>
+                </div>
+                <div class="media-body va-m">
+                    <h2 class="media-heading">
+                        @Model.Student.FirstName @Model.Student.LastName
+                        <small> - Profile</small>
+                    </h2>
+                    <p class="lead">@Model.Student.Email</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <span class="panel-icon">
+                            <i class="fa fa-book"></i>
+                        </span>
+                        <span class="panel-title"> Academic Info</span>
+                    </div>
+                    <div class="panel-body pn">
+                        <h6>Department</h6>
+                        <h4>@Model.Student.Department</h4>
+                        <h6>Year</h6>
+                        <h4>@Model.Student.Year</h4>
+                        <h6>Semester</h6>
+                        <h4>@Model.Student.Semester</h4>
+                        <h6>Session</h6>
+                        <h4>@Model.Student.Session</h4>
+                        <h6>CGPA</h6>
+                        <h4>@Model.Student.AverageGrade</h4>
+                        <h6>Completed Credit</h6>
+                        <h4>@Model.Student.CompletedCredit</h4>
+                    </div>
+                </div>               
+                <div class="panel">
+                    <div class="panel-heading">
+                        <span class="panel-icon">
+                            <i class="fa fa-pencil"></i>
+                        </span>
+                        <span class="panel-title">About Me</span>
+                    </div>
+                    <div class="panel-body pb5">
+                        <h6>Extracurricular Activities</h6>
+                        <h4>@Model.Student.ExtracurricularActivities</h4>
+                        <h6>Blog</h6>
+                        <h4>@Model.Student.Blog</h4>
+                        <h6>Reference</h6>
+                        <h4>@Model.Student.Reference</h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+
+                <div class="tab-block">                                     
+                    <div class="tab-content p30" style="height: 500px;">
+                        <h3>Course Result</h3>
+                        <br>
+                        <div id="tab1" class="tab-pane active">
+                            <table class="table">
+                                <tr>
+                                    <th>Course Name</th>
+                                    <th>Grade</th>
+                                </tr>
+                                @if (Model.StudentCourseList != null)
+                                {
+                                    foreach (StudentCourseInfo scr in Model.StudentCourseList)
+                                    {
+                                        <tr>
+                                            <td>@scr.CourseName</td>
+                                            <td>@scr.Grade</td>
+                                        </tr>
+                                    }
+                                }
+                            </table>
+                        </div>
+                        <br>
+                        <h3>Student Expertise</h3>
+                        <br>
+                        <div id="tab2" class="tab-pane active">
+                            <table class="table">
+                                <tr>
+                                    <th>Expert on</th>
+                                    <th>Institution</th>
+                                </tr>
+                                @if (Model.StudentExpertiseList != null)
+                                {
+                                    foreach (StudentExpertiseInfo scr in Model.StudentExpertiseList)
+                                    {
+                                        <tr>
+                                            <td>@scr.TopicName</td>
+                                            <td>@scr.Institution</td>
+                                        </tr>
+                                    }
+                                }
+                            </table>
+                        </div>
+                        <br>
+                        <h3>Student Interest</h3>
+                        <br>
+                        <div id="tab3" class="tab-pane active">
+                            <table class="table">
+                                <tr>
+                                    <th>Interested in</th>
+                                    <th>Reason</th>
+                                </tr>
+                                @if (Model.StudentInterestList != null)
+                                {
+                                    foreach (StudentInterestInfo scr in Model.StudentInterestList)
+                                    {
+                                        <tr>
+                                            <td>@scr.TopicName</td>
+                                            <td>@scr.Reason</td>
+                                        </tr>
+                                    }
+                                }
+                            </table>
+                        </div>
+                        <div id="tab4" class="tab-pane"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>

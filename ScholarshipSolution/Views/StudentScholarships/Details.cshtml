@@ -1,0 +1,114 @@
+﻿@model ScholarshipSolution.Models.StudentScholarship
+
+@{
+    ViewBag.Title = "Details";
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Scholarship Solution</title>
+    <!-- Site favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="~/Content/vendors_admin/images/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/Content/vendors_admin/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/vendors_admin/images/favicon-16x16.png">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+    @Styles.Render("~/Content/vendor/bootstrap/css/bootstrap.min.css")
+    @Styles.Render("~/Content/vendor/bootstrap-icons/bootstrap-icons.css")
+    @Styles.Render("~/Content/cssassets/vendor/aos/aos.css")
+    @Styles.Render("~/Content/vendor/remixicon/remixicon.css")
+    @Styles.Render("~/Content/vendor/swiper/swiper-bundle.min.css")
+    @Styles.Render("~/Content/vendor/glightbox/css/glightbox.min.css")
+    @Styles.Render("~/Content/css/style.css")
+    @Styles.Render("~/Content/css/profprofile.css")
+    @Styles.Render("~/Content/css/StyleSheet1.css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+            <a href="#hero" class="logo d-flex align-items-center">
+                <img src="~/Content/img/logo.png" alt="">
+                <span style="color:#ff758f;">Scholarship Solution</span>
+            </a>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto" href="~/Universities/SearchUni/">University</a></li>
+                    <li><a class="nav-link scrollto" href="~/Students/Professor/">Professor</a></li>
+                    <li><a class="nav-link scrollto" href="~/Students/StudentScholarship/">Scholarship</a></li>
+                    <li><a class="nav-link scrollto " style="margin-left:35px; " href="~/Students/DashBoard/">My Profile</a></li>
+                    <li><a class="getstarted scrollto" href="~/Home/Index/">Logout</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header>
+    <!-- Header -->
+    <!-- Page content -->
+    <br>
+    <section id="content" class="container">
+
+        <div>
+            <h4>StudentScholarship</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.Status)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Status)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Scholarship.DegreeName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Scholarship.DegreeName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Student.FirstName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Student.FirstName)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.StudentScholarshipID }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </section>
+
+
+
+    <!-- Vendor JS Files -->
+    @Scripts.Render("~/assets/vendor/bootstrap/js/bootstrap.bundle.js")
+    @Scripts.Render("~/assets/vendor/aos/aos.js")
+    @Scripts.Render("~/assets/vendor/php-email-form/validate.js")
+    @Scripts.Render("~/assets/vendor/swiper/swiper-bundle.min.js")
+    @Scripts.Render("~/assets/vendor/purecounter/purecounter.js")
+    @Scripts.Render("~/assets/vendor/isotope-layout/isotope.pkgd.min.js")
+    @Scripts.Render("~/assets/vendor/glightbox/js/glightbox.min.js")
+
+
+    <!-- Template Main JS File -->
+    @Scripts.Render("~/assets/js/main.js")
+    @*@RenderSection("scripts", required: false)*@
+</body>
+</html>
+

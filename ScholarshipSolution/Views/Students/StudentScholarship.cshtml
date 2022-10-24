@@ -1,0 +1,68 @@
+﻿@model IEnumerable<ScholarshipSolution.Models.Scholarship>
+@{
+    ViewBag.Title = "StudentScholarship";
+    Layout = "~/Views/Shared/_LayoutStudent.cshtml";
+}
+
+
+        <section id="portfolio" class="portfolio">
+            <div class="container" data-aos="fade-up">
+                <header class="section-header">
+                    <h2>Universities</h2>
+                    <p>Check our latest work</p>
+                </header>
+                <div>
+                    @using (Html.BeginForm("StudentScholarship", "Students", FormMethod.Get))
+                    {
+                        //@Html.TextBox("searching")<input type="submit" value="Search" />
+                        @Html.TextBox("search", null, new { id = "choices-text-preset-values", @class = "form-control", @type = "text", @placeholder = "Type to search..." })<input type="submit" value="Search" />
+                    }
+                </div>
+                <br><br><br>
+                <div style="margin:20px; padding:10px;">
+                    <table class=" table table-striped ">
+                        <thead>
+                            <tr>
+                                <th>Degree Name</th>
+                                <th>University</th>
+                                <th>Professor Name</th>
+                                <th>Subject</th>
+                                <th>Session</th>
+                                <th>@Html.ActionLink("MinimumGPA", "StudentScholarship",new { sortOrder = ViewBag.GpaSortParm })</th>
+                                <th>@Html.ActionLink("LastDate", "StudentScholarship", new { sortOrder = ViewBag.DateSortParm })</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            @if (Model.Count() == 0)
+                            {
+                                <p style="color:red"> No Match Found!</p>
+                            }
+                            else
+                            {
+                                foreach (var item in Model)
+                                {
+                                    <tr>
+                                        <td>@item.DegreeName</td>
+                                        <td>@item.University.UniName</td>
+                                        <td>@item.Professor.Name</td>
+                                        <td>@item.Subject</td>
+                                        <td>@item.Session</td>
+                                        <td>@item.MinimumGPA</td>
+                                        <td>@item.LastDate</td>
+                                        <td>
+                                            @Html.ActionLink("Enroll", "Create", "StudentScholarships", new { id = item.ScholarshipID }, null) |
+                                            @Html.ActionLink("Details", "Details", "StudentScholarships", new { id = item.ScholarshipID }, null)
+                                        </td>
+                                    </tr>
+                                }
+                            }
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </section>
+    
+

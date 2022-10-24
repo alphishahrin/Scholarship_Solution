@@ -1,0 +1,48 @@
+﻿@model IEnumerable<ScholarshipSolution.Models.Professor>
+
+@{
+    ViewBag.Title = "Professor";
+    Layout = "~/Views/Shared/_LayoutStudent.cshtml";
+}
+
+
+<section id="services" class="services">
+
+    <div class="container" data-aos="fade-up">
+        <header class="section-header">
+            <h2>Available Professors</h2>
+            <p>Contact them soon for your desired scholarship. </p>
+        </header>
+        <div>
+            @using (Html.BeginForm("Professor", "Students", FormMethod.Get))
+            {
+                //@Html.TextBox("searching")<input type="submit" value="Search" />
+                @Html.TextBox("searching", null, new { id = "choices-text-preset-values", @class = "form-control", @type = "text", @placeholder = "Type to search..." })<input type="submit" value="Search" />
+            }
+        </div>
+        <br><br><br>
+        <div class="row gy-4">
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-box blue">
+                        <img src="@Url.Content(item.Picture)" class="img-fluid" width="100" height="100" alt="">
+                        <h3>@Html.DisplayFor(model => item.Name)</h3>
+                        <p>@Html.DisplayFor(model => item.Email)</p>
+                        <p>@Html.DisplayFor(model => item.Interest.TopicName)</p>
+                        <p>@Html.DisplayFor(model => item.Expertise.TopicName)</p>
+                        <p>@Html.ActionLink("Profile", "ProfileFromStudent", "Professors", new { id = item.ProfID }, null)</p><i class="bi bi-arrow-right"></i>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</section>
+    
+
+
+@*<h2>Professor</h2>*@
+
+
+

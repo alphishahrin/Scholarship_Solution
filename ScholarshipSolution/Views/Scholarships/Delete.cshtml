@@ -1,0 +1,104 @@
+﻿@model ScholarshipSolution.Models.Scholarship
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Scholarship</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DegreeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DegreeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Subject)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Subject)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PercentageOfScholarship)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PercentageOfScholarship)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Session)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Session)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Seats)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Seats)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.MinimumGPA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.MinimumGPA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.OtherRequirements)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.OtherRequirements)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.LastDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.LastDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Professor.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Professor.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.University.UniName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.University.UniName)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

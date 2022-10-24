@@ -1,0 +1,551 @@
+﻿@model ScholarshipSolution.Models.Professor
+
+@{
+    ViewBag.Title = "DashBoard";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Scholarship Solution</title>
+    <!-- Site favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="~/Content/vendors_admin/images/logo.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="~/Content/vendors_admin/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="~/Content/vendors_admin/images/favicon-16x16.png">
+
+    @Styles.Render("~/Content/vendor/bootstrap/css/bootstrap.min.css")
+    @Styles.Render("~/Content/vendor/bootstrap-icons/bootstrap-icons.css")
+    @Styles.Render("~/Content/cssassets/vendor/aos/aos.css")
+    @Styles.Render("~/Content/vendor/remixicon/remixicon.css")
+    @Styles.Render("~/Content/vendor/swiper/swiper-bundle.min.css")
+    @Styles.Render("~/Content/vendor/glightbox/css/glightbox.min.css")
+    @Styles.Render("~/Content/css/style.css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="header fixed-top">
+        <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+            <a href="#hero" class="logo d-flex align-items-center">
+                <img src="~/Content/img/logo.png" alt="">
+                <span style="color:#ff758f;">Scholarship Solution</span>
+            </a>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link scrollto" href="#hero">Home</a></li>
+                    <li><a class="nav-link scrollto" href="~/Universities/ShowAll">University</a></li>
+                    <li><a class="nav-link scrollto" href="~/Students/Index">Students</a></li>
+                    <li><a class="nav-link scrollto" href="~/Home/Index/#contact">Contact</a></li>
+                    <li><a class="nav-link scrollto" href="~/Home/Index/#team">About Us</a></li>
+                    <li><a class="nav-link scrollto " style="margin-left:35px; " href="~/Professors/Profile/">My Profile</a></li>
+                    <li><a class="getstarted scrollto" href="~/Home/Index/">Logout</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav><!-- .navbar -->
+        </div>
+    </header>
+    <!-- End Header -->
+  
+    <!-- ======= Top University Section ======= -->
+    <section id="values" class="values">
+
+        <div class="container" data-aos="fade-up">
+
+            <header class="section-header">
+                <h2>Top Universities</h2>
+                <p>We present you the high ranked unoveristies from this site.</p>
+            </header>
+
+            <div class="row">
+
+                <div class="col-lg-4">
+                    <div class="box" data-aos="fade-up" data-aos-delay="200">
+                        <img src="~/Content/img/values-1.jpg" class="img-fluid" alt="">
+                        <h3>Univeristy of Toronto</h3>
+                        <p>The University of Toronto is a public research university in Toronto, Ontario, Canada, located on the grounds that surround Queen's Park. It was founded by royal charter in 1827 as King's College, the first institution of higher learning in Upper Canada..</p>
+                    </div>
+                    <div class="wrap">
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4 mt-lg-0">
+                    <div class="box" data-aos="fade-up" data-aos-delay="400">
+                        <img src="~/Content/img/values-2.jpeg" class="img-fluid" alt="">
+                        <h3>Dhaka University</h3>
+                        <p>Repudiandae amet nihil natus in distinctio suscipit id. Doloremque ducimus ea sit non.</p>
+                    </div>
+                    <div class="wrap">
+
+                    </div>
+                </div>
+
+                <div class="col-lg-4 mt-4 mt-lg-0">
+                    <div class="box" data-aos="fade-up" data-aos-delay="600">
+                        <img src="~/Content/img/values-3.jpeg" class="img-fluid" alt="">
+                        <h3>University of Alberta</h3>
+                        <p>Quam rem vitae est autem molestias explicabo debitis sint. Vero aliquid quidem commodi.</p>
+                    </div>
+                    <div class="wrap">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Top University Section -->
+    <!-- ======= Counts Section ======= -->
+    <section id="counts" class="counts">
+        <div class="container" data-aos="fade-up">
+
+            <div class="row gy-4">
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="count-box">
+                        <i class="bi bi-people"></i>
+                        <div>
+                            <span data-purecounter-start="0" data-purecounter-end="23" data-purecounter-duration="0.25" class="purecounter"></span>
+                            <p>Registered Students</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="count-box">
+                        <i class="bi bi-person" style="color: #ee6c20;"></i>
+                        <div>
+                            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="0.25" class="purecounter"></span>
+                            <p>Professors</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="count-box">
+                        <i class="bi bi-union" style="color: #15be56;"></i>
+                        <div>
+                            <span data-purecounter-start="0" data-purecounter-end="14" data-purecounter-duration="0.25" class="purecounter"></span>
+                            <p>Universities</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <div class="count-box">
+                        <i class="bi bi-people" style="color: #bb0852;"></i>
+                        <div>
+                            <span data-purecounter-start="0" data-purecounter-end="15" data-purecounter-duration="0.25" class="purecounter"></span>
+                            <p>Scholarships</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- End Counts Section -->
+    <!-- ======= Scholarship Section ======= -->
+    <section id="services" class="services">
+
+        <div class="container" data-aos="fade-up">
+
+            <header class="section-header">
+                <h2>Available Scholarship</h2>
+                <p>All the scholarships posted by the professor of this site.  </p>
+            </header>
+
+            <div class="row gy-4">
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-box blue">
+                        <i class="ri-discuss-line icon"></i>
+                        <h3>Nesciunt Mete</h3>
+                        <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores iure perferendis tempore et consequatur.</p>
+                        <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-box orange">
+                        <i class="ri-discuss-line icon"></i>
+                        <h3>Eosle Commodi</h3>
+                        <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum hic non ut nesciunt dolorem.</p>
+                        <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="service-box green">
+                        <i class="ri-discuss-line icon"></i>
+                        <h3>Ledo Markt</h3>
+                        <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id voluptas adipisci eos earum corrupti.</p>
+                        <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+                    <div class="service-box red">
+                        <i class="ri-discuss-line icon"></i>
+                        <h3>Asperiores Commodi</h3>
+                        <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga sit provident adipisci neque.</p>
+                        <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+                    <div class="service-box purple">
+                        <i class="ri-discuss-line icon"></i>
+                        <h3>Velit Doloremque.</h3>
+                        <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed animi at autem alias eius labore.</p>
+                        <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="700">
+                    <div class="service-box pink">
+                        <i class="ri-discuss-line icon"></i>
+                        <h3>Dolori Architecto</h3>
+                        <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure. Corrupti recusandae ducimus enim.</p>
+                        <a href="#" class="read-more"><span>Read More</span> <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- End Scholarship Section -->
+    <!-- ======= Team Section ======= -->
+    <section id="team" class="team">
+
+        <div class="container" data-aos="fade-up">
+
+            <header class="section-header">
+                <h2>Team</h2>
+                <p>Our hard working team</p>
+            </header>
+
+            <div class="row gy-3" style="align-items:center" ;>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                    <div class="member">
+                        <div class="member-img">
+                            <img src="~/Content/img/team/team-5.jpg" class="img-fluid" alt="">
+                            <div class="social">
+
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Sadman Sadik</h4>
+                            <span>Group Member - 1</span>
+                            <p>Id - 180104110 <br /> AUST, Dhaka, Banglagesh</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
+                    <div class="member">
+                        <div class="member-img">
+                            <img src="~/Content/img/team/team-2.jpg" class="img-fluid" alt="">
+                            <div class="social">
+
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Fabliha Nahid</h4>
+                            <span>Group Member - 2</span>
+                            <p>Id - 180104116 <br /> AUST, Dhaka, Banglagesh</p>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
+                    <div class="member">
+                        <div class="member-img">
+                            <img src="~/Content/img/team/team-4.jpg" class="img-fluid" alt="">
+                            <div class="social">
+
+                                <a href=""><i class="bi bi-facebook"></i></a>
+                                <a href=""><i class="bi bi-instagram"></i></a>
+                                <a href=""><i class="bi bi-linkedin"></i></a>
+                            </div>
+                        </div>
+                        <div class="member-info">
+                            <h4>Alphi Shahrin</h4>
+                            <span>Group Member - 4</span>
+                            <p>Id - 180104121 <br /> AUST, Dhaka, Banglagesh</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+    <!-- End Team Section -->
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+
+        <div class="container" data-aos="fade-up">
+
+            <header class="section-header">
+                <h2>Contact</h2>
+                <p>Contact Us</p>
+            </header>
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="info-box">
+                        <i class="bi bi-geo-alt"></i>
+                        <h3>Address</h3>
+                        <p>Ahsanullah University of Science & Technology<br>Dhaka, Bangladesh</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="info-box">
+                        <i class="bi bi-telephone"></i>
+                        <h3>Call Us</h3>
+                        <p>+1 1112 222334</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="info-box">
+                        <i class="bi bi-envelope"></i>
+                        <h3>Email Us</h3>
+                        <p>180104107@aust.edu</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="info-box">
+                        <i class="bi bi-clock"></i>
+                        <h3>Open Hours</h3>
+                        <p>Monday - Friday<br>9:00AM - 05:00PM</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- End Contact Section -->
+    <!-- ======= Footer ======= -->
+    <div class="container body-content">
+        <hr />
+        <footer id="footer" class="footer">
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row gy-4">
+                        <div class="col-lg-5 col-md-12 footer-info">
+                            <a href="index.html" class="logo d-flex align-items-center">
+                                <img src="assets/img/logo.png" alt="">
+                                <span>Schoarship Solution</span>
+                            </a>
+                            <p>Cras fermentum odio eu feugiat lide par naso tierra.</p>
+                            <div class="social-links mt-3">
+                                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+                                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2 col-6 footer-links">
+                            <h4>Useful Links</h4>
+                            <ul>
+                                <li><i class="bi bi-chevron-right"></i> <a href="#">Home</a></li>
+                                <li><i class="bi bi-chevron-right"></i> <a href="#">Scholarship</a></li>
+                                <li><i class="bi bi-chevron-right"></i> <a href="#">University</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-lg-2 col-6 footer-links">
+                            <h4>Admin Section</h4>
+                            <a class="nav-link scrollto" href="~/Home/AdminLogin/">Login</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container">
+                <div class="copyright">
+                    &copy; Copyright <strong><span>ScholarshipSolution</span></strong>. All Rights Reserved
+                </div>
+                <div class="credits">
+                    Designed by <a href="https://bootstrapmade.com/">Group-7</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- End Footer -->
+
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    @Scripts.Render("~/assets/vendor/bootstrap/js/bootstrap.bundle.js")
+    @Scripts.Render("~/assets/vendor/aos/aos.js")
+    @Scripts.Render("~/assets/vendor/php-email-form/validate.js")
+    @Scripts.Render("~/assets/vendor/swiper/swiper-bundle.min.js")
+    @Scripts.Render("~/assets/vendor/purecounter/purecounter.js")
+    @Scripts.Render("~/assets/vendor/isotope-layout/isotope.pkgd.min.js")
+    @Scripts.Render("~/assets/vendor/glightbox/js/glightbox.min.js")
+
+
+    <!-- Template Main JS File -->
+    @Scripts.Render("~/assets/js/main.js")
+    @*@RenderSection("scripts", required: false)*@
+
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@*<div style="margin:20px; padding:10px;">
+        <h4>Professor</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.EducationalBackground)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.EducationalBackground)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.NoOfStudents)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.NoOfStudents)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Funding)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Funding)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Password)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Password)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Picture)
+            </dt>
+
+            <dd>
+                <img src="@Url.Content(Model.Picture)" width="250" height="250" />
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Department)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Department)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Expertise.TopicName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Expertise.TopicName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.Interest.TopicName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Interest.TopicName)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.University.UniName)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.University.UniName)
+            </dd>
+
+        </dl>
+    </div>*@
+
+
+
+
+
+
+

@@ -1,0 +1,1047 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{8D539833-2858-434E-9E2D-E9F5418F50C9}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ScholarshipSolution</RootNamespace>
+    <AssemblyName>ScholarshipSolution</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44305</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.7.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.7\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.7\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.7\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CoursesController.cs" />
+    <Compile Include="Controllers\ExpertisesController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\InterestsController.cs" />
+    <Compile Include="Controllers\ProfessorResearchPapersController.cs" />
+    <Compile Include="Controllers\ProfessorsController.cs" />
+    <Compile Include="Controllers\ScholarshipsController.cs" />
+    <Compile Include="Controllers\StudentCourseResultsController.cs" />
+    <Compile Include="Controllers\StudentExpertisesController.cs" />
+    <Compile Include="Controllers\StudentInterestsController.cs" />
+    <Compile Include="Controllers\StudentMessagesController.cs" />
+    <Compile Include="Controllers\StudentResearchPapersController.cs" />
+    <Compile Include="Controllers\StudentScholarshipsController.cs" />
+    <Compile Include="Controllers\StudentsController.cs" />
+    <Compile Include="Controllers\UniversitiesController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Course.cs">
+      <DependentUpon>DbAccessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DbAccessModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbAccessModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DbAccessModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbAccessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\DbAccessModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DbAccessModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\EnrollStudent.cs" />
+    <Compile Include="Models\Expertise.cs">
+      <DependentUpon>DbAccessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Interest.cs">
+      <DependentUpon>DbAccessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Professor.cs">
+      <DependentUpon>DbAccessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProfessorResearchPaper.cs">
+      <DependentUpon>DbAccessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ProfessorScholarship.cs" />
+    <Compile Include="Models\Scholarship.cs">
+      <DependentUpon>DbAccessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Student.cs">
+      <DependentUpon>DbAccessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentCourseInfo.cs" />
+    <Compile Include="Models\StudentCourseResult.cs">
+      <DependentUpon>DbAccessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentExpertise.cs">
+      <DependentUpon>DbAccessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentExpertiseInfo.cs" />
+    <Compile Include="Models\StudentInterest.cs">
+      <DependentUpon>DbAccessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentInterestExperties.cs" />
+    <Compile Include="Models\StudentInterestInfo.cs" />
+    <Compile Include="Models\StudentMessage.cs">
+      <DependentUpon>DbAccessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentResearchPaper.cs">
+      <DependentUpon>DbAccessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentScholarship.cs">
+      <DependentUpon>DbAccessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\StudentScholarshipInfo.cs" />
+    <Compile Include="Models\TemoStudent.cs" />
+    <Compile Include="Models\TempAdmin.cs" />
+    <Compile Include="Models\TempProfessor.cs" />
+    <Compile Include="Models\University.cs">
+      <DependentUpon>DbAccessModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\css\main.css" />
+    <Content Include="Content\css\material-design-iconic-font.min.css" />
+    <Content Include="Content\css\montserrat-font.css" />
+    <Content Include="Content\css\profprofile.css" />
+    <Content Include="Content\css\rating.css" />
+    <Content Include="Content\css\style.css" />
+    <Content Include="Content\css\style2.css" />
+    <Content Include="Content\css\StyleSheet1.css" />
+    <Content Include="Content\css\style_prof_login.css" />
+    <Content Include="Content\img\about.png" />
+    <Content Include="Content\img\apple-touch-icon.png" />
+    <Content Include="Content\img\blog\blog-1.jpg" />
+    <Content Include="Content\img\blog\blog-2.jpg" />
+    <Content Include="Content\img\blog\blog-3.jpg" />
+    <Content Include="Content\img\blog\blog-4.jpg" />
+    <Content Include="Content\img\blog\blog-author.jpg" />
+    <Content Include="Content\img\blog\blog-inside-post.jpg" />
+    <Content Include="Content\img\blog\blog-recent-1.jpg" />
+    <Content Include="Content\img\blog\blog-recent-2.jpg" />
+    <Content Include="Content\img\blog\blog-recent-3.jpg" />
+    <Content Include="Content\img\blog\blog-recent-4.jpg" />
+    <Content Include="Content\img\blog\blog-recent-5.jpg" />
+    <Content Include="Content\img\blog\comments-1.jpg" />
+    <Content Include="Content\img\blog\comments-2.jpg" />
+    <Content Include="Content\img\blog\comments-3.jpg" />
+    <Content Include="Content\img\blog\comments-4.jpg" />
+    <Content Include="Content\img\blog\comments-5.jpg" />
+    <Content Include="Content\img\blog\comments-6.jpg" />
+    <Content Include="Content\img\clients\client-1.png" />
+    <Content Include="Content\img\clients\client-2.png" />
+    <Content Include="Content\img\clients\client-3.png" />
+    <Content Include="Content\img\clients\client-4.png" />
+    <Content Include="Content\img\clients\client-5.png" />
+    <Content Include="Content\img\clients\client-6.png" />
+    <Content Include="Content\img\clients\client-7.png" />
+    <Content Include="Content\img\clients\client-8.png" />
+    <Content Include="Content\img\favicon.png" />
+    <Content Include="Content\img\features-2.png" />
+    <Content Include="Content\img\features-3.png" />
+    <Content Include="Content\img\features.png" />
+    <Content Include="Content\img\footer-bg.png" />
+    <Content Include="Content\img\Graduation.svg" />
+    <Content Include="Content\img\hero-bg.png" />
+    <Content Include="Content\img\hero-img.png" />
+    <Content Include="Content\img\hero-img.svg" />
+    <Content Include="Content\img\log.svg" />
+    <Content Include="Content\img\logo.png" />
+    <Content Include="Content\img\portfolio\portfolio-1.jpg" />
+    <Content Include="Content\img\portfolio\portfolio-2.jpg" />
+    <Content Include="Content\img\portfolio\portfolio-3.jpg" />
+    <Content Include="Content\img\portfolio\portfolio-4.jpg" />
+    <Content Include="Content\img\portfolio\portfolio-5.jpg" />
+    <Content Include="Content\img\portfolio\portfolio-6.jpg" />
+    <Content Include="Content\img\portfolio\portfolio-7.jpg" />
+    <Content Include="Content\img\portfolio\portfolio-8.jpg" />
+    <Content Include="Content\img\portfolio\portfolio-9.jpg" />
+    <Content Include="Content\img\pricing-business.png" />
+    <Content Include="Content\img\pricing-free.png" />
+    <Content Include="Content\img\pricing-starter.png" />
+    <Content Include="Content\img\pricing-ultimate.png" />
+    <Content Include="Content\img\ProfessorImg\log.svg" />
+    <Content Include="Content\img\ProfessorImg\register.svg" />
+    <Content Include="Content\img\register.svg" />
+    <Content Include="Content\img\Sign.svg" />
+    <Content Include="Content\img\team-shape.svg" />
+    <Content Include="Content\img\team\team-1.jpg" />
+    <Content Include="Content\img\team\team-2.jpg" />
+    <Content Include="Content\img\team\team-3.jpg" />
+    <Content Include="Content\img\team\team-4.jpg" />
+    <Content Include="Content\img\testimonials\testimonials-1.jpg" />
+    <Content Include="Content\img\testimonials\testimonials-2.jpg" />
+    <Content Include="Content\img\testimonials\testimonials-3.jpg" />
+    <Content Include="Content\img\testimonials\testimonials-4.jpg" />
+    <Content Include="Content\img\testimonials\testimonials-5.jpg" />
+    <Content Include="Content\img\undraw_certification_aif8.png" />
+    <Content Include="Content\img\values-1.jpg" />
+    <Content Include="Content\img\values-2.jpeg" />
+    <Content Include="Content\img\values-3.jpeg" />
+    <Content Include="Content\js\app_prof_login.js" />
+    <Content Include="Content\js\choices.js" />
+    <Content Include="Content\js\main.js" />
+    <Content Include="Content\plugins_admin\air-datepicker\dist\css\datepicker.css" />
+    <Content Include="Content\plugins_admin\air-datepicker\dist\css\datepicker.min.css" />
+    <Content Include="Content\plugins_admin\air-datepicker\dist\js\datepicker.js" />
+    <Content Include="Content\plugins_admin\air-datepicker\dist\js\datepicker.min.js" />
+    <Content Include="Content\plugins_admin\air-datepicker\dist\js\i18n\datepicker.cs.js" />
+    <Content Include="Content\plugins_admin\air-datepicker\dist\js\i18n\datepicker.da.js" />
+    <Content Include="Content\plugins_admin\air-datepicker\dist\js\i18n\datepicker.de.js" />
+    <Content Include="Content\plugins_admin\air-datepicker\dist\js\i18n\datepicker.en.js" />
+    <Content Include="Content\plugins_admin\air-datepicker\dist\js\i18n\datepicker.es.js" />
+    <Content Include="Content\plugins_admin\air-datepicker\dist\js\i18n\datepicker.fi.js" />
+    <Content Include="Content\plugins_admin\air-datepicker\dist\js\i18n\datepicker.fr.js" />
+    <Content Include="Content\plugins_admin\air-datepicker\dist\js\i18n\datepicker.hu.js" />
+    <Content Include="Content\plugins_admin\air-datepicker\dist\js\i18n\datepicker.nl.js" />
+    <Content Include="Content\plugins_admin\air-datepicker\dist\js\i18n\datepicker.pl.js" />
+    <Content Include="Content\plugins_admin\air-datepicker\dist\js\i18n\datepicker.pt-BR.js" />
+    <Content Include="Content\plugins_admin\air-datepicker\dist\js\i18n\datepicker.pt.js" />
+    <Content Include="Content\plugins_admin\air-datepicker\dist\js\i18n\datepicker.ro.js" />
+    <Content Include="Content\plugins_admin\air-datepicker\dist\js\i18n\datepicker.sk.js" />
+    <Content Include="Content\plugins_admin\air-datepicker\dist\js\i18n\datepicker.zh.js" />
+    <Content Include="Content\plugins_admin\apexcharts\apexcharts.css" />
+    <Content Include="Content\plugins_admin\apexcharts\apexcharts.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\bootstrap-select.css" />
+    <Content Include="Content\plugins_admin\bootstrap-select\bootstrap-select.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\bootstrap-select.min.css" />
+    <Content Include="Content\plugins_admin\bootstrap-select\bootstrap-select.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\css\bootstrap-select.css" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\css\bootstrap-select.min.css" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\bootstrap-select.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\bootstrap-select.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-am_ET.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-am_ET.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-ar_AR.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-ar_AR.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-bg_BG.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-bg_BG.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-cs_CZ.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-cs_CZ.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-da_DK.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-da_DK.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-de_DE.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-de_DE.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-en_US.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-en_US.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-es_CL.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-es_CL.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-es_ES.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-es_ES.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-et_EE.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-et_EE.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-eu.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-eu.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-fa_IR.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-fa_IR.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-fi_FI.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-fi_FI.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-fr_FR.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-fr_FR.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-hr_HR.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-hr_HR.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-hu_HU.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-hu_HU.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-id_ID.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-id_ID.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-it_IT.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-it_IT.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-ja_JP.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-ja_JP.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-kh_KM.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-kh_KM.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-ko_KR.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-ko_KR.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-lt_LT.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-lt_LT.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-lv_LV.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-lv_LV.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-nb_NO.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-nb_NO.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-nl_NL.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-nl_NL.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-pl_PL.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-pl_PL.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-pt_BR.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-pt_BR.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-pt_PT.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-pt_PT.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-ro_RO.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-ro_RO.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-ru_RU.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-ru_RU.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-sk_SK.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-sk_SK.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-sl_SI.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-sl_SI.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-sv_SE.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-sv_SE.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-tr_TR.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-tr_TR.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-ua_UA.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-ua_UA.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-vi_VN.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-vi_VN.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-zh_CN.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-zh_CN.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-zh_TW.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-zh_TW.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\bootstrap-select.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-ar_AR.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-bg_BG.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-cro_CRO.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-cs_CZ.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-da_DK.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-de_DE.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-en_US.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-es_CL.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-es_ES.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-et_EE.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-eu.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-fa_IR.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-fi_FI.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-fr_FR.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-hu_HU.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-id_ID.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-it_IT.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-ja_JP.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-kh_KM.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-ko_KR.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-lt_LT.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-nb_NO.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-nl_NL.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-pl_PL.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-pt_BR.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-pt_PT.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-ro_RO.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-ru_RU.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-sk_SK.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-sl_SI.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-sv_SE.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-tr_TR.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-ua_UA.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-vi_VN.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-zh_CN.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\i18n\defaults-zh_TW.js" />
+    <Content Include="Content\plugins_admin\bootstrap-select\test.html" />
+    <Content Include="Content\plugins_admin\bootstrap-tagsinput\bootstrap-tagsinput.css" />
+    <Content Include="Content\plugins_admin\bootstrap-tagsinput\bootstrap-tagsinput.js" />
+    <Content Include="Content\plugins_admin\bootstrap-touchspin\jquery.bootstrap-touchspin.css" />
+    <Content Include="Content\plugins_admin\bootstrap-touchspin\jquery.bootstrap-touchspin.js" />
+    <Content Include="Content\plugins_admin\bootstrap-wysihtml5-master\bootstrap-wysihtml5.css" />
+    <Content Include="Content\plugins_admin\bootstrap-wysihtml5-master\bootstrap-wysihtml5.js" />
+    <Content Include="Content\plugins_admin\bootstrap\bootstrap.css" />
+    <Content Include="Content\plugins_admin\bootstrap\bootstrap.js" />
+    <Content Include="Content\plugins_admin\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\plugins_admin\bootstrap\bootstrap.min.js" />
+    <Content Include="Content\plugins_admin\bootstrap\popper.min.js" />
+    <Content Include="Content\plugins_admin\cropperjs\dist\cropper-init.js" />
+    <Content Include="Content\plugins_admin\cropperjs\dist\cropper.common.js" />
+    <Content Include="Content\plugins_admin\cropperjs\dist\cropper.css" />
+    <Content Include="Content\plugins_admin\cropperjs\dist\cropper.esm.js" />
+    <Content Include="Content\plugins_admin\cropperjs\dist\cropper.js" />
+    <Content Include="Content\plugins_admin\cropperjs\dist\cropper.min.css" />
+    <Content Include="Content\plugins_admin\cropperjs\dist\cropper.min.js" />
+    <Content Include="Content\plugins_admin\datatables\css\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\plugins_admin\datatables\css\jquery.dataTables.min.css" />
+    <Content Include="Content\plugins_admin\datatables\css\responsive.bootstrap4.min.css" />
+    <Content Include="Content\plugins_admin\datatables\css\responsive.dataTables.min.css" />
+    <Content Include="Content\plugins_admin\datatables\images\sort_asc.png" />
+    <Content Include="Content\plugins_admin\datatables\images\sort_asc_disabled.png" />
+    <Content Include="Content\plugins_admin\datatables\images\sort_both.png" />
+    <Content Include="Content\plugins_admin\datatables\images\sort_desc.png" />
+    <Content Include="Content\plugins_admin\datatables\images\sort_desc_disabled.png" />
+    <Content Include="Content\plugins_admin\datatables\js\buttons.bootstrap4.min.js" />
+    <Content Include="Content\plugins_admin\datatables\js\buttons.flash.min.js" />
+    <Content Include="Content\plugins_admin\datatables\js\buttons.html5.min.js" />
+    <Content Include="Content\plugins_admin\datatables\js\buttons.print.min.js" />
+    <Content Include="Content\plugins_admin\datatables\js\dataTables.bootstrap4.min.js" />
+    <Content Include="Content\plugins_admin\datatables\js\dataTables.buttons.min.js" />
+    <Content Include="Content\plugins_admin\datatables\js\dataTables.responsive.min.js" />
+    <Content Include="Content\plugins_admin\datatables\js\jquery.dataTables.min.js" />
+    <Content Include="Content\plugins_admin\datatables\js\jszip.min.js" />
+    <Content Include="Content\plugins_admin\datatables\js\pdfmake.min.js" />
+    <Content Include="Content\plugins_admin\datatables\js\responsive.bootstrap4.min.js" />
+    <Content Include="Content\plugins_admin\datatables\js\vfs_fonts.js" />
+    <Content Include="Content\plugins_admin\dropzone\src\dropzone.css" />
+    <Content Include="Content\plugins_admin\dropzone\src\dropzone.js" />
+    <Content Include="Content\plugins_admin\fancybox\dist\jquery.fancybox.css" />
+    <Content Include="Content\plugins_admin\fancybox\dist\jquery.fancybox.js" />
+    <Content Include="Content\plugins_admin\fancybox\dist\jquery.fancybox.min.css" />
+    <Content Include="Content\plugins_admin\fancybox\dist\jquery.fancybox.min.js" />
+    <Content Include="Content\plugins_admin\fullcalendar\fullcalendar.css" />
+    <Content Include="Content\plugins_admin\fullcalendar\fullcalendar.min.js" />
+    <Content Include="Content\plugins_admin\highcharts-6.0.7\code\highcharts-3d.js" />
+    <Content Include="Content\plugins_admin\highcharts-6.0.7\code\highcharts-3d.src.js" />
+    <Content Include="Content\plugins_admin\highcharts-6.0.7\code\highcharts-more.js" />
+    <Content Include="Content\plugins_admin\highcharts-6.0.7\code\highcharts-more.src.js" />
+    <Content Include="Content\plugins_admin\highcharts-6.0.7\code\highcharts.js" />
+    <Content Include="Content\plugins_admin\highcharts-6.0.7\code\highcharts.src.js" />
+    <Content Include="Content\plugins_admin\highlight.js\src\highlight.js" />
+    <Content Include="Content\plugins_admin\highlight.js\src\highlight.pack.js" />
+    <Content Include="Content\plugins_admin\highlight.js\src\styles\solarized-dark.css" />
+    <Content Include="Content\plugins_admin\ion-rangeslider\css\ion.rangeSlider.css" />
+    <Content Include="Content\plugins_admin\ion-rangeslider\js\ion.rangeSlider.min.js" />
+    <Content Include="Content\plugins_admin\jquery-asColorPicker\dist\css\asColorPicker.css" />
+    <Content Include="Content\plugins_admin\jquery-asColorPicker\dist\images\alpha.png" />
+    <Content Include="Content\plugins_admin\jquery-asColorPicker\dist\images\hue.png" />
+    <Content Include="Content\plugins_admin\jquery-asColorPicker\dist\images\saturation.png" />
+    <Content Include="Content\plugins_admin\jquery-asColorPicker\dist\images\transparent.png" />
+    <Content Include="Content\plugins_admin\jquery-asColorPicker\jquery-asColorPicker.js" />
+    <Content Include="Content\plugins_admin\jquery-asColor\dist\jquery-asColor.js" />
+    <Content Include="Content\plugins_admin\jquery-asGradient\dist\jquery-asGradient.js" />
+    <Content Include="Content\plugins_admin\jQuery-Knob-master\jquery.knob.min.js" />
+    <Content Include="Content\plugins_admin\jquery-steps\jquery.steps.css" />
+    <Content Include="Content\plugins_admin\jquery-steps\jquery.steps.js" />
+    <Content Include="Content\plugins_admin\jvectormap\jquery-jvectormap-2.0.3.css" />
+    <Content Include="Content\plugins_admin\jvectormap\jquery-jvectormap-2.0.3.min.js" />
+    <Content Include="Content\plugins_admin\jvectormap\jquery-jvectormap-world-mill-en.js" />
+    <Content Include="Content\plugins_admin\jvectormap\jquery-jvectormap.css" />
+    <Content Include="Content\plugins_admin\jvectormap\jquery-jvectormap.js" />
+    <Content Include="Content\plugins_admin\malihu-custom-scrollbar-plugin-master\jquery.mCustomScrollbar.concat.min.js" />
+    <Content Include="Content\plugins_admin\malihu-custom-scrollbar-plugin-master\jquery.mCustomScrollbar.css" />
+    <Content Include="Content\plugins_admin\malihu-custom-scrollbar-plugin-master\jquery.mCustomScrollbar.js" />
+    <Content Include="Content\plugins_admin\malihu-custom-scrollbar-plugin-master\jquery.mCustomScrollbar.min.css" />
+    <Content Include="Content\plugins_admin\malihu-custom-scrollbar-plugin-master\jquery.mousewheel.min.js" />
+    <Content Include="Content\plugins_admin\plyr\dist\plyr.css" />
+    <Content Include="Content\plugins_admin\plyr\dist\plyr.js" />
+    <Content Include="Content\plugins_admin\plyr\dist\plyr.svg" />
+    <Content Include="Content\plugins_admin\select2\dist\css\select2.css" />
+    <Content Include="Content\plugins_admin\select2\dist\css\select2.min.css" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\af.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\ar.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\az.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\bg.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\bs.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\ca.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\cs.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\da.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\de.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\dsb.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\el.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\en.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\es.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\et.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\eu.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\fa.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\fi.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\fr.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\gl.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\he.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\hi.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\hr.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\hsb.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\hu.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\hy.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\id.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\is.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\it.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\ja.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\km.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\ko.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\lt.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\lv.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\mk.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\ms.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\nb.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\nl.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\pl.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\ps.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\pt-BR.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\pt.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\ro.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\ru.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\sk.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\sl.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\sr-Cyrl.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\sr.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\sv.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\th.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\tk.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\tr.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\uk.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\vi.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\zh-CN.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\i18n\zh-TW.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\select2.full.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\select2.full.min.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\select2.js" />
+    <Content Include="Content\plugins_admin\select2\dist\js\select2.min.js" />
+    <Content Include="Content\plugins_admin\slick\slick.css" />
+    <Content Include="Content\plugins_admin\slick\slick.min.js" />
+    <Content Include="Content\plugins_admin\sweetalert2\sweet-alert.init.js" />
+    <Content Include="Content\plugins_admin\sweetalert2\sweetalert2.all.js" />
+    <Content Include="Content\plugins_admin\sweetalert2\sweetalert2.css" />
+    <Content Include="Content\plugins_admin\switchery\switchery.min.css" />
+    <Content Include="Content\plugins_admin\switchery\switchery.min.js" />
+    <Content Include="Content\plugins_admin\timedropper\timedropper.css" />
+    <Content Include="Content\plugins_admin\timedropper\timedropper.js" />
+    <Content Include="Content\plugins_admin\timedropper\timedropper.min.css" />
+    <Content Include="Content\plugins_admin\timedropper\timedropper.min.js" />
+    <Content Include="Content\plugins_admin\wysihtml5-master\dist\wysihtml5-0.3.0.js" />
+    <Content Include="Content\vendors_admin\fonts\dropways.css" />
+    <Content Include="Content\vendors_admin\fonts\dropways.svg" />
+    <Content Include="Content\vendors_admin\fonts\font-awesome\css\font-awesome.css" />
+    <Content Include="Content\vendors_admin\fonts\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\vendors_admin\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\vendors_admin\fonts\foundation-icons.css" />
+    <Content Include="Content\vendors_admin\fonts\foundation-icons.svg" />
+    <Content Include="Content\vendors_admin\fonts\ionicons-master\css\ionicons.css" />
+    <Content Include="Content\vendors_admin\fonts\ionicons-master\css\ionicons.min.css" />
+    <Content Include="Content\vendors_admin\fonts\ionicons.svg" />
+    <Content Include="Content\vendors_admin\fonts\themify-icons\themify-icons.css" />
+    <Content Include="Content\vendors_admin\fonts\themify.svg" />
+    <Content Include="Content\vendors_admin\images\apple-touch-icon.png" />
+    <Content Include="Content\vendors_admin\images\banner-img.png" />
+    <Content Include="Content\vendors_admin\images\blue-logo.png" />
+    <Content Include="Content\vendors_admin\images\briefcase.svg" />
+    <Content Include="Content\vendors_admin\images\cancel.svg" />
+    <Content Include="Content\vendors_admin\images\caution-sign.png" />
+    <Content Include="Content\vendors_admin\images\chat-img1.jpg" />
+    <Content Include="Content\vendors_admin\images\chat-img2.jpg" />
+    <Content Include="Content\vendors_admin\images\check-mark-green.png" />
+    <Content Include="Content\vendors_admin\images\check-mark.png" />
+    <Content Include="Content\vendors_admin\images\chrome.png" />
+    <Content Include="Content\vendors_admin\images\coming-soon.png" />
+    <Content Include="Content\vendors_admin\images\cross.png" />
+    <Content Include="Content\vendors_admin\images\demo.svg" />
+    <Content Include="Content\vendors_admin\images\deskapp-logo-white.svg" />
+    <Content Include="Content\vendors_admin\images\deskapp-logo.svg" />
+    <Content Include="Content\vendors_admin\images\edge.png" />
+    <Content Include="Content\vendors_admin\images\favicon-16x16.png" />
+    <Content Include="Content\vendors_admin\images\favicon-32x32.png" />
+    <Content Include="Content\vendors_admin\images\firefox.png" />
+    <Content Include="Content\vendors_admin\images\forgot-password.png" />
+    <Content Include="Content\vendors_admin\images\github.svg" />
+    <Content Include="Content\vendors_admin\images\icon-Cash.png" />
+    <Content Include="Content\vendors_admin\images\icon-debit.png" />
+    <Content Include="Content\vendors_admin\images\icon-online-wallet.png" />
+    <Content Include="Content\vendors_admin\images\img.jpg" />
+    <Content Include="Content\vendors_admin\images\img1.jpg" />
+    <Content Include="Content\vendors_admin\images\img2.jpg" />
+    <Content Include="Content\vendors_admin\images\img3.jpg" />
+    <Content Include="Content\vendors_admin\images\img4.jpg" />
+    <Content Include="Content\vendors_admin\images\img5.jpg" />
+    <Content Include="Content\vendors_admin\images\internet-explorer.png" />
+    <Content Include="Content\vendors_admin\images\layout\header-dark.png" />
+    <Content Include="Content\vendors_admin\images\layout\header-white.png" />
+    <Content Include="Content\vendors_admin\images\layout\sidebar-dark.png" />
+    <Content Include="Content\vendors_admin\images\layout\sidebar-white.png" />
+    <Content Include="Content\vendors_admin\images\login-img.png" />
+    <Content Include="Content\vendors_admin\images\login-page-img.png" />
+    <Content Include="Content\vendors_admin\images\logo-icon.png" />
+    <Content Include="Content\vendors_admin\images\menu-icon.svg" />
+    <Content Include="Content\vendors_admin\images\modal-img1.jpg" />
+    <Content Include="Content\vendors_admin\images\modal-img2.jpg" />
+    <Content Include="Content\vendors_admin\images\modal-img3.jpg" />
+    <Content Include="Content\vendors_admin\images\new-loader.gif" />
+    <Content Include="Content\vendors_admin\images\opera.png" />
+    <Content Include="Content\vendors_admin\images\page-icon.svg" />
+    <Content Include="Content\vendors_admin\images\person.svg" />
+    <Content Include="Content\vendors_admin\images\photo1.jpg" />
+    <Content Include="Content\vendors_admin\images\photo2.jpg" />
+    <Content Include="Content\vendors_admin\images\photo3.jpg" />
+    <Content Include="Content\vendors_admin\images\photo4.jpg" />
+    <Content Include="Content\vendors_admin\images\photo5.jpg" />
+    <Content Include="Content\vendors_admin\images\photo6.jpg" />
+    <Content Include="Content\vendors_admin\images\photo7.jpg" />
+    <Content Include="Content\vendors_admin\images\photo8.jpg" />
+    <Content Include="Content\vendors_admin\images\photo9.jpg" />
+    <Content Include="Content\vendors_admin\images\plyr.svg" />
+    <Content Include="Content\vendors_admin\images\product-1.jpg" />
+    <Content Include="Content\vendors_admin\images\product-2.jpg" />
+    <Content Include="Content\vendors_admin\images\product-3.jpg" />
+    <Content Include="Content\vendors_admin\images\product-4.jpg" />
+    <Content Include="Content\vendors_admin\images\product-5.jpg" />
+    <Content Include="Content\vendors_admin\images\product-img1.jpg" />
+    <Content Include="Content\vendors_admin\images\product-img2.jpg" />
+    <Content Include="Content\vendors_admin\images\product-img3.jpg" />
+    <Content Include="Content\vendors_admin\images\product-img4.jpg" />
+    <Content Include="Content\vendors_admin\images\profile-photo.jpg" />
+    <Content Include="Content\vendors_admin\images\register-page-img.png" />
+    <Content Include="Content\vendors_admin\images\safari.png" />
+    <Content Include="Content\vendors_admin\images\success.png" />
+    <Content Include="Content\vendors_admin\images\tick.svg" />
+    <Content Include="Content\vendors_admin\images\upload-file-img.jpg" />
+    <Content Include="Content\vendors_admin\images\wave.png" />
+    <Content Include="Content\vendors_admin\scripts\advanced-components.js" />
+    <Content Include="Content\vendors_admin\scripts\apexcharts-setting.js" />
+    <Content Include="Content\vendors_admin\scripts\calendar-setting.js" />
+    <Content Include="Content\vendors_admin\scripts\colorpicker.js" />
+    <Content Include="Content\vendors_admin\scripts\core.js" />
+    <Content Include="Content\vendors_admin\scripts\core.min.js" />
+    <Content Include="Content\vendors_admin\scripts\dashboard.js" />
+    <Content Include="Content\vendors_admin\scripts\dashboard2.js" />
+    <Content Include="Content\vendors_admin\scripts\datatable-setting.js" />
+    <Content Include="Content\vendors_admin\scripts\highchart-setting.js" />
+    <Content Include="Content\vendors_admin\scripts\jvectormap-setting.js" />
+    <Content Include="Content\vendors_admin\scripts\knob-chart-setting.js" />
+    <Content Include="Content\vendors_admin\scripts\layout-settings.js" />
+    <Content Include="Content\vendors_admin\scripts\process.js" />
+    <Content Include="Content\vendors_admin\scripts\range-slider-setting.js" />
+    <Content Include="Content\vendors_admin\scripts\script.js" />
+    <Content Include="Content\vendors_admin\scripts\script.min.js" />
+    <Content Include="Content\vendors_admin\scripts\steps-setting.js" />
+    <Content Include="Content\vendors_admin\styles\core.css" />
+    <Content Include="Content\vendors_admin\styles\core.min.css" />
+    <Content Include="Content\vendors_admin\styles\icon-font.css" />
+    <Content Include="Content\vendors_admin\styles\icon-font.min.css" />
+    <Content Include="Content\vendors_admin\styles\style.css" />
+    <Content Include="Content\vendors_admin\styles\style.min.css" />
+    <Content Include="Content\vendor\aos\aos.css" />
+    <Content Include="Content\vendor\aos\aos.js" />
+    <Content Include="Content\vendor\bootstrap-icons\bootstrap-icons.css" />
+    <Content Include="Content\vendor\bootstrap-icons\index.html" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.rtl.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-utilities.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-utilities.min.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.rtl.css" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.rtl.min.css" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.esm.js" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.esm.min.js" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\vendor\glightbox\css\glightbox.css" />
+    <Content Include="Content\vendor\glightbox\css\glightbox.min.css" />
+    <Content Include="Content\vendor\glightbox\js\glightbox.js" />
+    <Content Include="Content\vendor\glightbox\js\glightbox.min.js" />
+    <Content Include="Content\vendor\isotope-layout\isotope.pkgd.js" />
+    <Content Include="Content\vendor\isotope-layout\isotope.pkgd.min.js" />
+    <Content Include="Content\vendor\php-email-form\validate.js" />
+    <Content Include="Content\vendor\purecounter\purecounter.js" />
+    <Content Include="Content\vendor\remixicon\remixicon.css" />
+    <Content Include="Content\vendor\remixicon\remixicon.svg" />
+    <Content Include="Content\vendor\remixicon\remixicon.symbol.svg" />
+    <Content Include="Content\vendor\swiper\swiper-bundle.min.css" />
+    <Content Include="Content\vendor\swiper\swiper-bundle.min.js" />
+    <Content Include="favicon.ico" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Models\DbAccessModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DbAccessModel.Context.cs</LastGenOutput>
+      <DependentUpon>DbAccessModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Models\DbAccessModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DbAccessModel.edmx</DependentUpon>
+      <LastGenOutput>DbAccessModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <EntityDeploy Include="Models\DbAccessModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DbAccessModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\DbAccessModel.edmx.diagram">
+      <DependentUpon>DbAccessModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="Content\vendor\bootstrap-icons\bootstrap-icons.json" />
+    <Content Include="Content\vendor\bootstrap-icons\fonts\bootstrap-icons.woff" />
+    <Content Include="Content\vendor\bootstrap-icons\fonts\bootstrap-icons.woff2" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-utilities.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.rtl.css.map" />
+    <Content Include="Content\vendor\bootstrap\css\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.esm.js.map" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.esm.min.js.map" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="Content\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="Content\vendor\remixicon\remixicon.eot" />
+    <Content Include="Content\vendor\remixicon\remixicon.less" />
+    <Content Include="Content\vendor\remixicon\remixicon.ttf" />
+    <Content Include="Content\vendor\remixicon\remixicon.woff" />
+    <Content Include="Content\vendor\remixicon\remixicon.woff2" />
+    <Content Include="Content\vendors_admin\fonts\dropways.eot" />
+    <Content Include="Content\vendors_admin\fonts\dropways.ttf" />
+    <Content Include="Content\vendors_admin\fonts\dropways.woff" />
+    <Content Include="Content\vendors_admin\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\vendors_admin\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\vendors_admin\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\vendors_admin\fonts\fontawesome-webfont.woff2" />
+    <Content Include="Content\vendors_admin\fonts\FontAwesome.otf" />
+    <Content Include="Content\vendors_admin\fonts\foundation-icons.eot" />
+    <Content Include="Content\vendors_admin\fonts\foundation-icons.ttf" />
+    <Content Include="Content\vendors_admin\fonts\foundation-icons.woff" />
+    <Content Include="Content\vendors_admin\fonts\ionicons.eot" />
+    <Content Include="Content\vendors_admin\fonts\ionicons.ttf" />
+    <Content Include="Content\vendors_admin\fonts\ionicons.woff" />
+    <Content Include="Content\vendors_admin\fonts\themify.eot" />
+    <Content Include="Content\vendors_admin\fonts\themify.ttf" />
+    <Content Include="Content\vendors_admin\fonts\themify.woff" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\css\bootstrap-select.css.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\bootstrap-select.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\bootstrap-select.min.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-am_ET.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-ar_AR.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-bg_BG.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-cs_CZ.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-da_DK.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-de_DE.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-en_US.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-es_CL.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-es_ES.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-et_EE.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-eu.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-fa_IR.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-fi_FI.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-fr_FR.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-hr_HR.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-hu_HU.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-id_ID.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-it_IT.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-ja_JP.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-kh_KM.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-ko_KR.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-lt_LT.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-lv_LV.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-nb_NO.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-nl_NL.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-pl_PL.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-pt_BR.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-pt_PT.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-ro_RO.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-ru_RU.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-sk_SK.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-sl_SI.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-sv_SE.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-tr_TR.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-ua_UA.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-vi_VN.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-zh_CN.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\dist\js\i18n\defaults-zh_TW.js.map" />
+    <Content Include="Content\plugins_admin\bootstrap-select\js\.jshintrc" />
+    <Content Include="Content\plugins_admin\dropzone\src\basic.scss" />
+    <Content Include="Content\plugins_admin\dropzone\src\dropzone.scss" />
+    <Content Include="Content\plugins_admin\highcharts-6.0.7\code\highcharts-3d.js.map" />
+    <Content Include="Content\plugins_admin\highcharts-6.0.7\code\highcharts-more.js.map" />
+    <Content Include="Content\plugins_admin\highcharts-6.0.7\code\highcharts.js.map" />
+    <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.4.1.js" />
+    <Content Include="Scripts\jquery-3.4.1.min.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.js" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\rating.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Professors\Create.cshtml" />
+    <Content Include="Views\Professors\Delete.cshtml" />
+    <Content Include="Views\Professors\Details.cshtml" />
+    <Content Include="Views\Professors\Edit.cshtml" />
+    <Content Include="Views\Professors\Index.cshtml" />
+    <Content Include="Views\Home\AdminDashboard.cshtml" />
+    <Content Include="Views\Home\AdminLogin.cshtml" />
+    <Content Include="Views\Shared\_LayoutAdmin.cshtml" />
+    <Content Include="Views\StudentCourseResults\Create.cshtml" />
+    <Content Include="Views\StudentCourseResults\Delete.cshtml" />
+    <Content Include="Views\StudentCourseResults\Details.cshtml" />
+    <Content Include="Views\StudentCourseResults\Edit.cshtml" />
+    <Content Include="Views\StudentCourseResults\Index.cshtml" />
+    <Content Include="Views\Universities\Create.cshtml" />
+    <Content Include="Views\Universities\Delete.cshtml" />
+    <Content Include="Views\Universities\Details.cshtml" />
+    <Content Include="Views\Universities\Edit.cshtml" />
+    <Content Include="Views\Universities\Index.cshtml" />
+    <Content Include="Views\Interests\Create.cshtml" />
+    <Content Include="Views\Interests\Delete.cshtml" />
+    <Content Include="Views\Interests\Details.cshtml" />
+    <Content Include="Views\Interests\Edit.cshtml" />
+    <Content Include="Views\Interests\Index.cshtml" />
+    <Content Include="Views\Expertises\Create.cshtml" />
+    <Content Include="Views\Expertises\Delete.cshtml" />
+    <Content Include="Views\Expertises\Details.cshtml" />
+    <Content Include="Views\Expertises\Edit.cshtml" />
+    <Content Include="Views\Expertises\Index.cshtml" />
+    <Content Include="Views\Professors\Login.cshtml" />
+    <Content Include="Views\Students\Create.cshtml" />
+    <Content Include="Views\Students\Delete.cshtml" />
+    <Content Include="Views\Students\Details.cshtml" />
+    <Content Include="Views\Students\Edit.cshtml" />
+    <Content Include="Views\Students\Index.cshtml" />
+    <Content Include="Views\Students\Login.cshtml" />
+    <Content Include="Views\Students\SignUp.cshtml" />
+    <Content Include="Views\Students\Dashboard.cshtml" />
+    <Content Include="Views\Professors\DashBoard.cshtml" />
+    <Content Include="Views\Students\IndexGrade.cshtml" />
+    <Content Include="Views\Courses\Create.cshtml" />
+    <Content Include="Views\Courses\Delete.cshtml" />
+    <Content Include="Views\Courses\Details.cshtml" />
+    <Content Include="Views\Courses\Edit.cshtml" />
+    <Content Include="Views\Courses\Index.cshtml" />
+    <Content Include="Views\ProfessorResearchPapers\Create.cshtml" />
+    <Content Include="Views\ProfessorResearchPapers\Delete.cshtml" />
+    <Content Include="Views\ProfessorResearchPapers\Details.cshtml" />
+    <Content Include="Views\ProfessorResearchPapers\Edit.cshtml" />
+    <Content Include="Views\ProfessorResearchPapers\Index.cshtml" />
+    <Content Include="Views\Scholarships\Create.cshtml" />
+    <Content Include="Views\Scholarships\Delete.cshtml" />
+    <Content Include="Views\Scholarships\Details.cshtml" />
+    <Content Include="Views\Scholarships\Edit.cshtml" />
+    <Content Include="Views\Scholarships\Index.cshtml" />
+    <Content Include="Views\StudentExpertises\Create.cshtml" />
+    <Content Include="Views\StudentExpertises\Delete.cshtml" />
+    <Content Include="Views\StudentExpertises\Details.cshtml" />
+    <Content Include="Views\StudentExpertises\Edit.cshtml" />
+    <Content Include="Views\StudentExpertises\Index.cshtml" />
+    <Content Include="Views\StudentInterests\Create.cshtml" />
+    <Content Include="Views\StudentInterests\Delete.cshtml" />
+    <Content Include="Views\StudentInterests\Details.cshtml" />
+    <Content Include="Views\StudentInterests\Edit.cshtml" />
+    <Content Include="Views\StudentInterests\Index.cshtml" />
+    <Content Include="Views\StudentMessages\Create.cshtml" />
+    <Content Include="Views\StudentMessages\Delete.cshtml" />
+    <Content Include="Views\StudentMessages\Details.cshtml" />
+    <Content Include="Views\StudentMessages\Edit.cshtml" />
+    <Content Include="Views\StudentMessages\Index.cshtml" />
+    <Content Include="Views\StudentResearchPapers\Create.cshtml" />
+    <Content Include="Views\StudentResearchPapers\Delete.cshtml" />
+    <Content Include="Views\StudentResearchPapers\Details.cshtml" />
+    <Content Include="Views\StudentResearchPapers\Edit.cshtml" />
+    <Content Include="Views\StudentResearchPapers\Index.cshtml" />
+    <Content Include="Views\Professors\Profile.cshtml" />
+    <Content Include="Views\Universities\ShowAll.cshtml" />
+    <Content Include="Views\Universities\SearchUni.cshtml" />
+    <Content Include="Views\Students\StudentScholarship.cshtml" />
+    <Content Include="Views\Students\Professor.cshtml" />
+    <Content Include="Views\Students\search.cshtml" />
+    <Content Include="Views\StudentScholarships\Create.cshtml" />
+    <Content Include="Views\StudentScholarships\Delete.cshtml" />
+    <Content Include="Views\StudentScholarships\Details.cshtml" />
+    <Content Include="Views\StudentScholarships\Edit.cshtml" />
+    <Content Include="Views\StudentScholarships\Index.cshtml" />
+    <Content Include="Views\StudentScholarships\EnrolledStudent.cshtml" />
+    <Content Include="Views\Professors\ProfileFromStudent.cshtml" />
+    <Content Include="Views\Scholarships\Indexone.cshtml" />
+    <Content Include="Views\StudentScholarships\Accept.cshtml" />
+    <Content Include="Views\Shared\_LayoutStudent.cshtml" />
+    <Content Include="Views\Shared\_LayoutProf.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Content\img\StudentPicture\" />
+    <Folder Include="Content\ProfessorPicture\" />
+    <Folder Include="Content\UniversityPicture\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.4.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>10017</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44305/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

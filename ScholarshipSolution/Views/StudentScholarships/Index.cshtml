@@ -1,0 +1,41 @@
+﻿@model IEnumerable<ScholarshipSolution.Models.StudentScholarshipInfo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutStudent.cshtml";
+}
+
+
+    <section id="content" class="container">
+        <table class="table">
+            <tr>
+                <th>Degree Name</th>
+                <th>Subject</th>
+                <th>Scholarship<br>Percentage</th>
+                <th>Session</th>
+                <th>Min CGPA</th>
+                <th>University</th>
+                <th>Professor</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.DegreeName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Subject)</td>
+                <td>@Html.DisplayFor(modelItem => item.PercentageOfScholarship)</td>
+                <td>@Html.DisplayFor(modelItem => item.Session)</td>
+                <td>@Html.DisplayFor(modelItem => item.MinimumGPA)</td>
+                <td>@Html.DisplayFor(modelItem => item.UniName)</td>
+                <td>@Html.DisplayFor(modelItem => item.ProfName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Status)</td>
+                <td>@Html.ActionLink("Delete", "Delete", new { id = item.StudentScholarshipID })</td>
+            </tr>
+            }
+
+        </table>
+    </section>
+
+

@@ -1,0 +1,48 @@
+﻿@model ScholarshipSolution.Models.Expertise
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="main-container">
+    <div class="pd-ltr-20 xs-pd-20-10">
+        <div>
+            <h4>Expertise</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.TopicName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TopicName)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ExpertiseID }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+    </div>
+</div>
+
+        <div>
+            <h4>Expertise</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.TopicName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.TopicName)
+                </dd>
+
+            </dl>
+        </div>
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.ExpertiseID }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
